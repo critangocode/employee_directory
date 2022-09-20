@@ -1,0 +1,37 @@
+<div class="flex justify-center">
+	<div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+		<%= form_with(model: @employee, local: true) do |f| %>
+			<div class="py-2">
+				<p>
+					<%= f.label :first_name, "First Name:" %><br>
+					<%= f.text_field :first_name, placeholder: "Enter first name", autofocus: true, size: "30x1" %>
+				</p>
+			</div>
+			<div class="py-2">
+				<p>
+					<%= f.label :last_name, "Last Name:" %><br>
+					<%= f.text_field :last_name, placeholder: "Enter last name", size: "30x1" %>
+				</p>
+			</div>
+			<div class="py-2">
+				<p>
+					<%= f.label :email, "Email:" %><br>
+					<%= f.text_field :email, placeholder: "Enter a valid email", size: "30x1" %>
+				</p>
+			</div>
+			<div class="py-2">
+				<p>
+					<%= f.label :bio, "Biography:" %><br>
+					<%= f.text_area :bio, placeholder: "Create a biography", size: "32x10" %>
+				</p>
+			</div>
+			<div class="pt-2 flex justify-center">
+				<P>
+					<%= f.submit class: "inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded 
+															shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 
+															active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
+				</P>
+			</div>
+		<% end %>
+	</div>
+</div>
