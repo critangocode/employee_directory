@@ -18,8 +18,8 @@ class EmployeesController < ApplicationController
 			flash[:notice] = "Employee created successfully!"
 			redirect_to @employee
 		else
-			flash[:alert] = "There was an issue creating this employee"
-			render 'new'
+			flash.now[:alert] = "Employee was not created"
+			render 'new', status: :unprocessable_entity
 		end
   end
 
@@ -31,7 +31,8 @@ class EmployeesController < ApplicationController
 			flash[:notice] = "Employee updated successfully!"
 			redirect_to @employee
 		else
-			render 'edit'
+			flash.now[:alert] = "Employee was not updated"
+			render 'edit', status: :unprocessable_entity
 		end
   end
 

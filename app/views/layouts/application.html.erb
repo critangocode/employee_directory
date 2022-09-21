@@ -11,9 +11,10 @@
   </head>
 
   <body>
-	<%= render 'layouts/navigation' %>
-	<div class="px-6 py-6">	
-    <%= yield %>
-	</div>
+		<%= render 'layouts/navigation' %>
+		<div class="px-6 py-6">	
+			<%= render 'layouts/messages' %>
+			<%= yield %>
+		</div>
   </body>
 </html>
