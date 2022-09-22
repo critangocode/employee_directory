@@ -38,6 +38,7 @@ gem 'pry-rails', :group => :development
 gem "font-awesome-rails"
 gem 'hirb', '~> 0.7.3'
 gem 'devise'
+gem 'will_paginate', '~> 3.3'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

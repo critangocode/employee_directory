@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   end
 
   def index
-		@employees = Employee.all
+		@employees = Employee.paginate(page: params[:page], per_page: 8)
   end
 
   def new
