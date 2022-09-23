@@ -4,8 +4,18 @@ class EmployeesController < ApplicationController
   def show
   end
 
-  def index
-		@employees = Employee.paginate(page: params[:page], per_page: 8)
+	def index
+		if params[:query].present?
+			@employees = Employee.where("email LIKE ?", "%#{params[:query]}%").paginate(page: params[:page], per_page: 8)
+		else
+			@employees = Employee.paginate(page: params[:page], per_page: 8)
+		end
+
+		if turbo_frame_request?
+			render partial: "employees", locals: { employees: @employees }
+		else
+			render :index
+		end
   end
 
   def new
