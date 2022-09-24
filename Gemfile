@@ -35,8 +35,6 @@ gem "redis", "~> 4.0"
 
 # Custom Gems
 gem 'pry-rails', :group => :development
-gem "font-awesome-rails"
-gem 'hirb', '~> 0.7.3'
 gem 'devise'
 gem 'will_paginate', '~> 3.3'
 
