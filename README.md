@@ -5,6 +5,8 @@ application up and running.
 
 Things you may want to cover:
 
+Thank you for your consideration in this Junior Rails System Testing position!
+
 * Ruby version
 
 * System dependencies
