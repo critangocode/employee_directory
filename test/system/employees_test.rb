@@ -34,19 +34,17 @@ class EmployeesTest < ApplicationSystemTestCase
 
 	test "happy path for deleting employee from show page" do
 		click_on "View"
+		click_on "Delete"
+   
+		assert_selector "p", text: "Employee was deleted"
+	end
+
+	test "happy path for deleting employee from index root page" do
 		page.accept_confirm do
-      click_on "Delete"
+      click_on "Delete", match: :first 
     end
 
 		assert_selector "p", text: "Employee was deleted"
 	end
-
-	# test "happy path for deleting employee from index page" do
-	# 	page.accept_confirm do
-  #     click_on "Delete", match: :first 
-  #   end
-
-	# 	assert_selector "p", text: "Employee was deleted"
-	# end
 
 end

@@ -46,8 +46,10 @@ class EmployeesController < ApplicationController
 
   def destroy
 		@employee.destroy
-		flash[:notice] = "Employee was deleted"
-		redirect_to root_path, status: :see_other
+		respond_to do |format|
+			format.html { redirect_to root_path, status: :see_other, notice: "Employee was deleted" }
+			format.turbo_stream { flash.now[:notice] = "Employee was deleted" }
+		end
 	end
 
 	private
